@@ -14,6 +14,11 @@ List<OnBoardingCardsModel> loseHabitsCardsList = [
   OnBoardingCardsModel(
       image: 'assets/images/sleep.png', description: 'النوم الزائد'),
   OnBoardingCardsModel(
-      image: "assets/images/sedentary.png.png", description: 'تضيع الوقت'),
+      image: "assets/images/sedentary.png", description: 'تضيع الوقت'),
   OnBoardingCardsModel(image: "assets/images/lazy.png", description: "الكسل"),
+];
+
+List<OnBoardingCardsModel> genderList = [
+  OnBoardingCardsModel(image: 'assets/images/man.png', description: 'رجل'),
+  OnBoardingCardsModel(image: "assets/images/woman.png", description: 'أنثى'),
 ];

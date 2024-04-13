@@ -14,16 +14,25 @@ class OnBoardingView extends StatefulWidget {
 
 class _OnBoardingViewState extends State<OnBoardingView> {
   PageController controller = PageController();
-
+  bool isLastPage = false;
+  bool isFirestPage = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
-        PageView(controller: controller, children: const [
-          OnBoardingPageOne(),
-          OnBoardingPageTwo(),
-          OnBoardingPageThree(),
-        ]),
+        PageView(
+            controller: controller,
+            onPageChanged: (value) {
+              setState(() {
+                isLastPage = (value == 2);
+                isFirestPage = (value == 0);
+              });
+            },
+            children: const [
+              OnBoardingPageOne(),
+              OnBoardingPageTwo(),
+              OnBoardingPageThree(),
+            ]),
         Container(
           alignment: const Alignment(0, -.85),
           child: Positioned(
@@ -41,27 +50,34 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                CustomButton(
-                  text: "التالي",
-                  onPressed: () {
-                    controller.nextPage(
-                        duration: const Duration(microseconds: 800),
-                        curve: Curves.easeIn);
-                  },
-                ),
+                !isLastPage
+                    ? CustomButton(
+                        text: "التالي",
+                        onPressed: () {
+                          controller.nextPage(
+                              duration: const Duration(microseconds: 800),
+                              curve: Curves.easeIn);
+                        },
+                      )
+                    : CustomButton(
+                        text: "إنشاء حساب",
+                        onPressed: () {},
+                      ),
                 const SizedBox(
                   height: 8,
                 ),
-                CustomButton(
-                  text: 'الرجوع',
-                  onPressed: () {
-                    controller.previousPage(
-                        duration: const Duration(microseconds: 800),
-                        curve: Curves.easeIn);
-                  },
-                  withBorder: true,
-                  color: Colors.white,
-                )
+                isFirestPage
+                    ? const SizedBox()
+                    : CustomButton(
+                        text: 'الرجوع',
+                        onPressed: () {
+                          controller.previousPage(
+                              duration: const Duration(microseconds: 800),
+                              curve: Curves.easeIn);
+                        },
+                        withBorder: true,
+                        color: Colors.white,
+                      )
               ],
             ),
           ),

@@ -25,8 +25,6 @@ class _CustomOnBoardingCardState extends State<CustomOnBoardingCard> {
         });
       },
       child: Container(
-        // width: 150,
-        // height: 150,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: selected ? Colors.transparent : primaryColor,

@@ -19,7 +19,7 @@ class OnBoardingPageOne extends StatelessWidget {
           children: [
             Text(
               "العادات التي تريد إكتسابها",
-              style: AppStyles.styleBold20,
+              style: AppStyles.styleSemiBold18,
             ),
             const SizedBox(
               height: 8,
