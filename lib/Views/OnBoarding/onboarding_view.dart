@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:worktest1/Core/widgets/custom_button.dart';
 import 'package:worktest1/Views/OnBoarding/widgets/onboarding_page_three.dart';
 import 'package:worktest1/Views/OnBoarding/widgets/onboarding_page_tow.dart';
 import 'package:worktest1/Views/OnBoarding/widgets/onboarding_pageone.dart';
@@ -30,6 +31,38 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               controller: controller, // PageController
               count: 4,
               effect: const ExpandingDotsEffect(), // your preferred effect
+            ),
+          ),
+        ),
+        Container(
+          alignment: const Alignment(0, .92),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CustomButton(
+                  text: "التالي",
+                  onPressed: () {
+                    controller.nextPage(
+                        duration: const Duration(microseconds: 800),
+                        curve: Curves.easeIn);
+                  },
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                CustomButton(
+                  text: 'الرجوع',
+                  onPressed: () {
+                    controller.previousPage(
+                        duration: const Duration(microseconds: 800),
+                        curve: Curves.easeIn);
+                  },
+                  withBorder: true,
+                  color: Colors.white,
+                )
+              ],
             ),
           ),
         )
