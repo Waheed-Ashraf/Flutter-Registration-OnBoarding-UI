@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:worktest1/Core/widgets/custom_button.dart';
+import 'package:worktest1/Views/OnBoarding/widgets/men_avatar.dart';
 import 'package:worktest1/Views/OnBoarding/widgets/onboarding_page_three.dart';
 import 'package:worktest1/Views/OnBoarding/widgets/onboarding_page_tow.dart';
 import 'package:worktest1/Views/OnBoarding/widgets/onboarding_pageone.dart';
@@ -61,8 +62,13 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       )
                     : CustomButton(
                         text: "إنشاء حساب",
-                        onPressed: () {},
-                      ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MenAvatars()),
+                          );
+                        }),
                 const SizedBox(
                   height: 8,
                 ),

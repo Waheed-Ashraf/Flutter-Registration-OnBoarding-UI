@@ -18,7 +18,17 @@ List<OnBoardingCardsModel> loseHabitsCardsList = [
   OnBoardingCardsModel(image: "assets/images/lazy.png", description: "الكسل"),
 ];
 
-List<OnBoardingCardsModel> genderList = [
-  OnBoardingCardsModel(image: 'assets/images/man.png', description: 'رجل'),
-  OnBoardingCardsModel(image: "assets/images/woman.png", description: 'أنثى'),
+List<String> menAvatar = [
+  "assets/images/man (1).png",
+  "assets/images/man (2).png",
+  "assets/images/man (3).png",
+  "assets/images/man (4).png",
+  "assets/images/man.png",
+  "assets/images/young-man.png",
+];
+List<String> womenAvatar = [
+  "assets/images/woman (1).png",
+  "assets/images/woman (2).png",
+  "assets/images/woman (3).png",
+  "assets/images/woman.png",
 ];
