@@ -88,7 +88,7 @@ class _WomenAvatarState extends State<WomenAvatar> {
                     mainAxisSpacing: 16,
                     childAspectRatio: 1.2,
                   ),
-                  itemCount: menAvatar.length,
+                  itemCount: womenAvatar.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
                         onTap: () {

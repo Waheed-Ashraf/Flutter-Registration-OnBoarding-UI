@@ -7,8 +7,16 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: LoginViewBody(),
+    return Container(
+      decoration: const BoxDecoration(
+          gradient: RadialGradient(
+              center: Alignment(-.9, .8),
+              radius: .8,
+              colors: [Colors.blue, Colors.white])),
+      child: const Scaffold(
+        backgroundColor: Colors.transparent,
+        body: LoginViewBody(),
+      ),
     );
   }
 }

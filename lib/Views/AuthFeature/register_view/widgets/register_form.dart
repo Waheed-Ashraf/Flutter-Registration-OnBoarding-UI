@@ -99,10 +99,12 @@ class _RegisterFormState extends State<RegisterForm> {
             child: CustomButton(
                 text: 'إنشاء حساب',
                 onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) {
-                    return const OnBoardingView();
-                  }));
+                  if (formKey.currentState!.validate()) {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const OnBoardingView();
+                    }));
+                  }
                 }),
           )
         ],

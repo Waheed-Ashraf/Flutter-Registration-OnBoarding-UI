@@ -23,7 +23,7 @@ class LoginViewBody extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: Text(
-                'قم بتسجيل الخول',
+                'قم بتسجيل الدخول',
                 style: AppStyles.styleBold20,
               ),
             ),

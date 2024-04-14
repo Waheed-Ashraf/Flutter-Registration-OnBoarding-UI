@@ -40,7 +40,6 @@ class GenderCardsRow extends StatefulWidget {
 }
 
 class _GenderCardsRowState extends State<GenderCardsRow> {
-  bool isMale = true;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -126,3 +125,5 @@ class _GenderCardsRowState extends State<GenderCardsRow> {
     );
   }
 }
+
+bool isMale = true;

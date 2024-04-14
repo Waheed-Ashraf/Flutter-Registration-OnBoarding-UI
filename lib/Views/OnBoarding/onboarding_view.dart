@@ -5,6 +5,7 @@ import 'package:worktest1/Views/OnBoarding/widgets/men_avatar.dart';
 import 'package:worktest1/Views/OnBoarding/widgets/onboarding_page_three.dart';
 import 'package:worktest1/Views/OnBoarding/widgets/onboarding_page_tow.dart';
 import 'package:worktest1/Views/OnBoarding/widgets/onboarding_pageone.dart';
+import 'package:worktest1/Views/OnBoarding/widgets/women_avatar.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -16,7 +17,7 @@ class OnBoardingView extends StatefulWidget {
 class _OnBoardingViewState extends State<OnBoardingView> {
   PageController controller = PageController();
   bool isLastPage = false;
-  bool isFirestPage = false;
+  bool isFirestPage = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,11 +64,18 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     : CustomButton(
                         text: "إنشاء حساب",
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const MenAvatars()),
-                          );
+                          isMale
+                              ? Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const MenAvatars()),
+                                )
+                              : Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const WomenAvatar()),
+                                );
                         }),
                 const SizedBox(
                   height: 8,

@@ -28,27 +28,25 @@ class _SplashBodyState extends State<SplashBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Image.asset(
-            AssetsData.splashScreenImg,
-            width: 100,
-            height: 100,
-            fit: BoxFit.contain,
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          Text(
-            "تـطويـر الـذات",
-            textAlign: TextAlign.center,
-            style: AppStyles.styleBold20,
-          ),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Image.asset(
+          AssetsData.splashScreenImg,
+          width: 100,
+          height: 100,
+          fit: BoxFit.contain,
+        ),
+        const SizedBox(
+          height: 24,
+        ),
+        Text(
+          "تـطويـر الـذات",
+          textAlign: TextAlign.center,
+          style: AppStyles.styleBold20,
+        ),
+      ],
     );
   }
 }

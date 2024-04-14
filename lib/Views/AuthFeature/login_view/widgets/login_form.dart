@@ -32,9 +32,9 @@ class _LoginFormState extends State<LoginForm> {
             },
             validator: (value) {
               if (value!.isEmpty) {
-                return 'Enter a valid email';
+                return 'يجب إدخال الإيميل';
               } else if (!value.contains('@') || !value.contains('.')) {
-                return 'Email must conatains @ and .';
+                return '@يجب أن يحتوي الإيميل على ';
               }
 
               return null;
@@ -49,7 +49,7 @@ class _LoginFormState extends State<LoginForm> {
             },
             validator: (value) {
               if (value!.isEmpty) {
-                return 'Enter a valid password';
+                return 'يجب إدخال كلمة المرور';
               }
 
               return null;
@@ -68,17 +68,19 @@ class _LoginFormState extends State<LoginForm> {
             ],
           ),
           SizedBox(
-            height: MediaQuery.sizeOf(context).height * 0.05,
+            height: MediaQuery.sizeOf(context).height * 0.08,
           ),
           SizedBox(
             height: 55,
             child: CustomButton(
                 text: 'تسجيل الخول',
                 onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) {
-                    return const OnBoardingView();
-                  }));
+                  if (formKey.currentState!.validate()) {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const OnBoardingView();
+                    }));
+                  }
                 }),
           ),
         ],

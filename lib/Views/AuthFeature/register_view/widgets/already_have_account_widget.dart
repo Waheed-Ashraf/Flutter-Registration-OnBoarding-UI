@@ -19,7 +19,7 @@ class AlreadyHaveAccounrWidget extends StatelessWidget {
             }));
           },
           child: Text('سجل الدخول',
-              style: AppStyles.styleSemiBold16.copyWith(color: primaryColor)),
+              style: AppStyles.styleSemiBold16.copyWith(color: Colors.white)),
         ),
         const SizedBox(
           width: 8,
